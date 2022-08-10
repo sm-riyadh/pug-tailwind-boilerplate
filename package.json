@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-tailwind",
+  "version": "1.0.0",
+  "description": "Uses TailwindCSS in Node.js with Express",
+  "main": "./src/app.js",
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "start": "concurrently \"nodemon ./src/app.js\", \"yarn run tailwind:css\"",
+    "tailwind:css": "postcss -w ./src/style/main.css -o ./dist/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^3.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "concurrently": "^7.3.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.19",
+    "postcss": "^8.1.2",
+    "postcss-cli": "^10.0.0",
+    "postcss-import": "^14.1.0",
+    "tailwindcss": "^3.1.8"
+  }
+}
